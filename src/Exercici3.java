@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class Exercici3 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner teclat = new Scanner(System.in);
 
         System.out.println("Introdueix la ruta del fitxer: ");
-        String ruta = input.nextLine();
+        String ruta = teclat.nextLine();
 
         comptaParaules(ruta);
     }

@@ -8,25 +8,25 @@ import java.util.Scanner;
 
 public class Exercici5 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner teclat = new Scanner(System.in);
 
         System.out.println("Introdueix el nom del fitxer amb les notes: ");
-        String nomFitxer = input.nextLine();
+        String nomFitxer = teclat.nextLine();
 
-        generaHistograma(nomFitxer);
+        generaInforme(nomFitxer);
     }
 
-    public static void generaHistograma(String nomFitxer) {
+    public static void generaInforme(String nomFitxer) {
         File file = new File(nomFitxer);
         if (!file.exists()) {
             System.out.println("El fitxer no existeix.");
             return;
         }
 
-        String histogramaNom = "Informe" + file.getName();
+        String informeNom = "Informe" + file.getName();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(histogramaNom, false))) {
+             BufferedWriter writer = new BufferedWriter(new FileWriter(informeNom, false))) {
 
             writer.write("Informe de" + file.getName());
             writer.newLine();
@@ -42,7 +42,7 @@ public class Exercici5 {
                     try {
                         double nota = Double.parseDouble(valor);
                         if (nota < 5) suspes++;
-                        else if (nota < 6.5) aprovat++;
+                        else if (nota < 7) aprovat++;
                         else if (nota < 9) notable++;
                         else if (nota <= 10) excelent++;
                     } catch (NumberFormatException e) {
