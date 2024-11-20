@@ -7,7 +7,7 @@ import java.util.Scanner;
  @Date 6/11/2024
 */
 
-public class EscriureText {
+public class Exercici1 {
     public static void main(String[] args) {
                 Scanner input = new Scanner(System.in);
                 System.out.println("Introdueix la ruta del fitxer: ");
@@ -45,15 +45,15 @@ public class EscriureText {
     }
 
     public static String invertir(String text) {
-        StringBuilder invertido = new StringBuilder();
+        StringBuilder invertit = new StringBuilder();
         for (char c : text.toCharArray()) {
             if (Character.isUpperCase(c)) {
-                invertido.append(Character.toLowerCase(c));
+                invertit.append(Character.toLowerCase(c));
             } else {
-                invertido.append(Character.toUpperCase(c));
+                invertit.append(Character.toUpperCase(c));
             }
         }
-        return invertido.toString();
+        return invertit.toString();
     }
 }
     
