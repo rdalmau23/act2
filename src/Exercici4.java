@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 /**
-  @author Rafel Dalmau
+  @author rafel dalmau
   @date 20/11/2024
  */
 
@@ -11,6 +11,7 @@ public class Exercici4 {
         Scanner input = new Scanner(System.in);
         String nomFitxer;
 
+        // bucle per demanar un nom de fitxer fins que no existeixi
         while (true) {
             System.out.println("Introdueix el nom del fitxer: ");
             nomFitxer = input.nextLine();
@@ -20,6 +21,7 @@ public class Exercici4 {
             System.out.println("El fitxer ja existeix. Prova amb un altre nom.");
         }
 
+        // escrivim en el fitxer amb el nom especificat
         escriuFitxer(nomFitxer);
     }
 
@@ -27,8 +29,9 @@ public class Exercici4 {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomFitxer, false))) {
             Scanner input = new Scanner(System.in);
 
+            // demanem linies per escriure al fitxer fins que l'usuari introdueix un punt
             while (true) {
-                System.out.println("Escriu una línia (un punt per acabar): ");
+                System.out.println("Escriu una linia (un punt per acabar): ");
                 String linia = input.nextLine();
 
                 if (linia.equals(".")) break;
